@@ -11,18 +11,14 @@ int incomingString;
 
 void setup() {
   // Put the motor to Arduino pin #3
-  myMotor.attach(3);
+  myMotor.attach(9);
 
-  // Required for I/O from Serial monitor
-  Serial.begin(9600);
-  // Print a startup message
-  Serial.println("initializing...");i
 
 
   // Arming Procedure
 
   myMotor.write(0);             
-  delay(2000);
+  delay(5000);
 
 
   // Test Procedure
