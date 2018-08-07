@@ -22,57 +22,40 @@ void setup() {
 
 
   // Test Procedure
-
   myMotor.write(50);
-  delay(10000);
+  delay(20000);
 
-  myMotor.write(55);
-  delay(10000);
+  myMotor.write(58);
+  delay(20000);
 
-  myMotor.write(60);
-  delay(10000);
+  myMotor.write(64);
+  delay(20000);
 
-  myMotor.write(65);
-  delay(10000);
-
-  myMotor.write(70);
-  delay(10000);
-
-  myMotor.write(75);
-  delay(10000);
+  myMotor.write(72);
+  delay(20000);
 
   myMotor.write(80);
-  delay(10000);
+  delay(20000);
+
+  myMotor.write(88);
+  delay(20000);
+
+  myMotor.write(96);
+  delay(20000);
   
-  myMotor.write(85);
-  delay(10000);
+  myMotor.write(104);
+  delay(20000);
 
-  myMotor.write(90);
-  delay(10000);
-
-  myMotor.write(95);
-  delay(10000);
-  
-  myMotor.write(100);
-  delay(10000);
-  
-  myMotor.write(105);
-  delay(10000);
-
-  myMotor.write(110);
-  delay(10000);
-
-  myMotor.write(115);
-  delay(10000);
+  myMotor.write(112);
+  delay(20000);
 
   myMotor.write(120);
-  delay(10000);
-
-  myMotor.write(125);
-  delay(10000);
-
+  delay(20000);
+  
   myMotor.write(130);
-  delay(10000);
+  delay(20000);
+
+
 
   myMotor.write(100);
   delay(100);
