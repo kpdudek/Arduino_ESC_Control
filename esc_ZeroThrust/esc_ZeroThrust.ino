@@ -25,25 +25,25 @@ void setup() {
   myMotor.write(50);
   delay(30000);
 
-  myMotor.write(65);
+  myMotor.write(70);
   delay(30000);
 
-  myMotor.write(80);
+  myMotor.write(90);
   delay(30000);
 
-  myMotor.write(95);
+  myMotor.write(110);
   delay(30000);
 
   myMotor.write(0);
   delay(30000);
 
-  myMotor.write(95);
+  myMotor.write(110);
   delay(30000);
 
-  myMotor.write(80);
+  myMotor.write(90);
   delay(30000);
   
-  myMotor.write(65);
+  myMotor.write(70);
   delay(30000);
 
   myMotor.write(50);
