@@ -22,19 +22,28 @@ void setup() {
   int f = rpm_to_pwm(10500);
   int g = rpm_to_pwm(note_to_rpm(5));
 
-  bar = 1; //one measure is one second
+  int bar = 1; //one measure is one second
 
   // Arming Procedure
   myMotor.write(0);             
   delay(5000);
 
+  
   // Test Procedure
-  myMotor.write(60);
-  delay(30000);
+  play_note(myMotor,e,.25,bar);
+  play_note(myMotor,e,.25,bar);
+  play_note(myMotor,e,.50,bar);
 
-  ramp_motor(myMotor,60,70);
-  delay(30000);
+  play_note(myMotor,e,.25,bar);
+  play_note(myMotor,e,.25,bar);
+  play_note(myMotor,e,.50,bar);
 
+  play_note(myMotor,e,.25,bar);
+  play_note(myMotor,g,.25,bar);
+  play_note(myMotor,c,.25,bar);
+  play_note(myMotor,d,.25,bar);
+  
+  play_note(myMotor,e,1.0,bar);
   
 
   // TURN THE MOTOR OFF -- VERY IMPORTANT
@@ -50,14 +59,16 @@ void loop() {
 
 // Functions used within runtime loop
 void play_note(Servo motor, int note,int duration,int bar) {
-  motor.write(note)
+  motor.writeMicroseconds(note);
+  double pause = (1000*bar)*duration;
+  delay(pause);
 }
 
 
 // Increase the rpm of a motor between two points
 void ramp_motor(Servo motor,int s,int e) {
   for (int i=s; i<e+1; i++){
-    motor.write(i);
+    motor.writeMicroseconds(i);
     delay(13);
   }
 }
@@ -66,7 +77,7 @@ void ramp_motor(Servo motor,int s,int e) {
 // Convert a pwm signal into the rpm that it produces
 int pwm_to_rpm(int pwm) {
   int rpm;
-  rpm = -.0043*pow(pwm,2) + 23.084*pwm - 14292;
+  rpm = ceil(-.0043*pow(pwm,2) + 23.084*pwm - 14292);
   return rpm;
 }
 
@@ -79,8 +90,8 @@ int rpm_to_pwm(int rpm) {
 
   int discrim = sqrt(b^2 - 4*a*c);
 
-  int b_plus = (-b + discrim) / (2*a);
-  int b_minus = (-b - discrim) / (2*a);
+  int b_plus = ceil((-b + discrim) / (2*a));
+  int b_minus = ceil((-b - discrim) / (2*a));
   return b_plus;
 }
 
