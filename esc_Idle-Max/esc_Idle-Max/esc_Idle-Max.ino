@@ -20,28 +20,28 @@ void setup() {
 
   // Test Procedure
   myMotor.write(80);
-  delay(30000);
+  delay(15000);
 
   myMotor.write(90);
-  delay(30000);
+  delay(15000);
 
   myMotor.write(100);
-  delay(30000);
+  delay(15000);
 
   myMotor.write(110);
-  delay(30000);
+  delay(15000);
 
   myMotor.write(120);
-  delay(30000);
+  delay(15000);
 
   myMotor.write(130);
-  delay(30000);
+  delay(15000);
 
   myMotor.write(140);
-  delay(30000);
+  delay(15000);
   
   myMotor.write(150);
-  delay(30000);
+  delay(15000);
 
 
   // Disarm the motor
